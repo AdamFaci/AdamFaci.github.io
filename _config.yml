@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Adam Faci"
 title_separator          : "-"
 name                     : &name "Adam Faci"
-description              : &description "My academic website"
+description              : &description "Interdisciplinary research on large language models and knowledge graphs for the social sciences and humanities."
 url                      : https://adamfaci.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "AdamFaci/AdamFaci.github.io"
@@ -24,9 +24,9 @@ author:
   avatar           : "profile.jpeg"
   name             : "Adam Faci"
   pronouns         : # example: "she/her"  
-  bio              : "Post-doc researcher studying LLM for SHS"
+  bio              : "Postdoctoral researcher — large language models and knowledge graphs for the social sciences and humanities."
   location         : "Paris, France"
-  employer         : "HumaNum - CNRS"
+  employer         : "Huma-Num (UAR 3598) - CNRS"
   uri              : "https://cv.hal.science/adam-faci"
   email            : "adam.faci@huma-num.fr" 
 
@@ -56,7 +56,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "adam-faci-880354118"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -107,7 +107,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
+  hide                   : true      # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
 
@@ -136,7 +136,7 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "google-universal" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               : false # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
     tracking_id          :
 
@@ -207,7 +207,7 @@ collections:
     permalink: /:collection/:path/
   portfolio:
     output: true
-    permalink: /:collection/:path/
+    permalink: /projects/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -280,7 +280,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/Paris # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
