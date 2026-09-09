@@ -1,5 +1,8 @@
 ---
 title: "De l'annotation manuelle à la classification automatique fine : segmentation, clustering et multimodalité pour l'analyse des bas-reliefs indiens"
+authors:
+  - "Maronet, Léa"
+  - "Faci, Adam"
 collection: talks
 type: "Workshop talk"
 permalink: /talks/2025-10-01-digit-hum-bas-reliefs-indiens

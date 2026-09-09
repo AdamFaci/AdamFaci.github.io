@@ -14,14 +14,45 @@ section: talks
 
 <h2 class="cv-heading">At a glance</h2>
 
-<ul class="compact-list">
+{% assign ob = "{" %}{% assign cb = "}" %}
+
+<ul class="compact-list compact-list--cite">
 {% for post in all_talks %}
+  {%- assign slug = post.title | slugify -%}
+  {%- assign yr = post.date | date: "%Y" -%}
+  {%- assign firstword = post.title | slugify | split: "-" | first -%}
+  {%- capture bibkey %}faci{{ yr }}{{ firstword }}{% endcapture -%}
+  {%- capture bibauthors %}{% for a in post.authors %}{{ a }}{% unless forloop.last %} and {% endunless %}{% endfor %}{% endcapture -%}
+  {%- capture apaauthors %}{% for a in post.authors %}{%- unless forloop.first %}{% if forloop.last %} & {% else %}, {% endif %}{% endunless -%}
+{{ a | split: ", " | first }}, {{ a | split: ", " | last | slice: 0, 1 }}.{% endfor %}{% endcapture -%}
   <li>
-    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
-    <span>
-      <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
+    <span class="compact-list__year">{{ yr }}</span>
+    <span class="compact-list__main">
+      <a class="compact-list__title" href="#{{ slug }}">{{ post.title }}</a>
+      <span class="compact-list__authors">{% for a in post.authors %}{%- assign disp = a | split: ", " | reverse | join: " " -%}{% if a == "Faci, Adam" %}<strong>{{ disp }}</strong>{% else %}{{ disp }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
       <span class="compact-list__venue">{{ post.type }}, {{ post.venue }}{% if post.remote %} &middot; <span class="tag tag--muted">remote</span>{% endif %}</span>
     </span>
+    <span class="compact-list__actions">
+      <button class="cite-btn" type="button" aria-expanded="false" aria-controls="cite-{{ slug }}">Cite</button>
+    </span>
+    <div class="cite-panel" id="cite-{{ slug }}" hidden>
+      <div class="cite-block">
+        <div class="cite-block__head"><span>BibTeX</span><button class="copy-btn" type="button">Copy</button></div>
+        <pre class="cite-src">@misc{{ ob }}{{ bibkey }},
+  author       = {{ ob }}{{ bibauthors }}{{ cb }},
+  title        = {{ ob }}{{ post.title }}{{ cb }},
+  year         = {{ ob }}{{ yr }}{{ cb }},
+  month        = {{ ob }}{{ post.date | date: "%B" }}{{ cb }},
+  howpublished = {{ ob }}{{ post.type }}, {{ post.venue }}{{ cb }},
+{% if post.location and post.location != "" %}  address      = {{ ob }}{{ post.location }}{{ cb }},
+{% endif %}{% if post.remote %}  note         = {{ ob }}Attended remotely{{ cb }},
+{% endif %}{{ cb }}</pre>
+      </div>
+      <div class="cite-block">
+        <div class="cite-block__head"><span>APA</span><button class="copy-btn" type="button">Copy</button></div>
+        <pre class="cite-src">{{ apaauthors }} ({{ yr }}, {{ post.date | date: "%B" }}). {{ post.title }} [{{ post.type }}]. {{ post.venue }}{% if post.location and post.location != "" %}, {{ post.location }}{% endif %}.</pre>
+      </div>
+    </div>
   </li>
 {% endfor %}
 </ul>

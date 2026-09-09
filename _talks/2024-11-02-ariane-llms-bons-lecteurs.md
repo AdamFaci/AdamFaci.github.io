@@ -1,5 +1,8 @@
 ---
 title: "Les LLMs sont-ils de bons lecteurs ? Des agents conversationnels collaboratifs pour l'interprétation de polars"
+authors:
+  - "Faci, Adam"
+  - "Schuh, Julien"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2024-11-02-ariane-llms-bons-lecteurs

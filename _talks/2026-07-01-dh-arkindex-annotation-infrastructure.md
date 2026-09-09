@@ -1,5 +1,12 @@
 ---
 title: "Co-Designing an Annotation Infrastructure for Small, Interpretive Datasets with Arkindex"
+authors:
+  - "Truc, Alice"
+  - "Maronet, Léa"
+  - "Faci, Adam"
+  - "Charpier, Marion"
+  - "Schuh, Julien"
+  - "Kermorvant, Christopher"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2026-07-01-dh-arkindex-annotation-infrastructure

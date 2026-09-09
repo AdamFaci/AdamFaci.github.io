@@ -1,5 +1,8 @@
 ---
 title: "RAG pour l'exploration de corpus en GLAM"
+authors:
+  - "Faci, Adam"
+  - "Silvestre de Sacy, Antoine"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2024-10-14-coldoc-rag-glam

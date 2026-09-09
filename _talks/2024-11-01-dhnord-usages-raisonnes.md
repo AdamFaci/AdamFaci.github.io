@@ -1,5 +1,9 @@
 ---
 title: "Usages raisonnés de l'IA en SHS : des travaux du HN Lab à ISIDORE 2030"
+authors:
+  - "Faci, Adam"
+  - "Pouyllau, Stéphane"
+  - "Silvestre de Sacy, Antoine"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2024-11-01-dhnord-usages-raisonnes

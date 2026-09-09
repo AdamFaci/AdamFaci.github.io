@@ -1,5 +1,8 @@
 ---
 title: "From Distant to Close Viewing: A Frugal Approach for the Study of Ancient Indian Patterns"
+authors:
+  - "Maronet, Léa"
+  - "Faci, Adam"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2026-07-02-dh-distant-close-viewing-indian-patterns

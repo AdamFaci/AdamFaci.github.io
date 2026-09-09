@@ -1,5 +1,8 @@
 ---
 title: "Analyse de corpus GLAM via une chaîne RAG"
+authors:
+  - "Silvestre de Sacy, Antoine"
+  - "Faci, Adam"
 collection: talks
 type: "Invited talk"
 permalink: /talks/2024-05-01-ai4lam-glam-rag

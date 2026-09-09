@@ -1,5 +1,8 @@
 ---
 title: "Segmentation automatique d'images en histoire de l'art : nouvelles méthodes et réflexion épistémologique"
+authors:
+  - "Faci, Adam"
+  - "Maronet, Léa"
 collection: talks
 type: "Invited seminar talk"
 permalink: /talks/2026-06-01-vhs-segmentation-histoire-art

@@ -1,5 +1,8 @@
 ---
 title: "Framing the Source: Knowledge Graphs, Generative Models, and the Epistemology of Qualitative Data Exploration"
+authors:
+  - "Provendier, Émile"
+  - "Faci, Adam"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2026-09-02-jadh-framing-the-source

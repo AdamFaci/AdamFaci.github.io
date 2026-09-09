@@ -1,5 +1,7 @@
 ---
 title: "PhD defence — Representation, Simulation and Mining of Knowledge in the Conceptual Graph Formalism"
+authors:
+  - "Faci, Adam"
 collection: talks
 type: "PhD defence"
 permalink: /talks/2022-04-01-phd-defense

@@ -1,5 +1,8 @@
 ---
 title: "Each Reading Is a World: Neuro-Symbolic AI Agents as Simulated Readers over a Large Literary Corpus"
+authors:
+  - "Faci, Adam"
+  - "Schuh, Julien"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2026-09-01-jadh-each-reading-is-a-world

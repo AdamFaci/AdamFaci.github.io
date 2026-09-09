@@ -1,5 +1,7 @@
 ---
 title: "Projets et méthodes pour la récupération et structuration de corpus"
+authors:
+  - "Faci, Adam"
 collection: talks
 type: "Session chair"
 permalink: /talks/2026-05-01-medias19-session-chair

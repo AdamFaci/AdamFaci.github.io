@@ -1,5 +1,7 @@
 ---
 title: "Structuration argumentative des débats parlementaires par IA : vers une modélisation interprétable des dynamiques discursives"
+authors:
+  - "Faci, Adam"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2026-05-02-humanistica-debats-parlementaires

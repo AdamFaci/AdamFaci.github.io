@@ -1,5 +1,8 @@
 ---
 title: "« Des canons par centaines » : comment les étiquetages manuels et automatiques du web social recomposent-ils les corpus littéraires ?"
+authors:
+  - "Langlet, Irène"
+  - "Faci, Adam"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2025-06-01-dhllm-canons

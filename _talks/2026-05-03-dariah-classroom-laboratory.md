@@ -1,5 +1,7 @@
 ---
 title: "The Classroom as Methodological Laboratory: Participatory Pedagogy for Digital Humanities Innovation"
+authors:
+  - "Faci, Adam"
 collection: talks
 type: "Poster"
 permalink: /talks/2026-05-03-dariah-classroom-laboratory

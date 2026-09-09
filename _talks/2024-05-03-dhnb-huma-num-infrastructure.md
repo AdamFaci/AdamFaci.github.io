@@ -1,5 +1,10 @@
 ---
 title: "Feedback et réflexions sur le futur de l'infrastructure de recherche Huma-Num"
+authors:
+  - "Pouyllau, Stéphane"
+  - "Silvestre de Sacy, Antoine"
+  - "Maronet, Léa"
+  - "Faci, Adam"
 collection: talks
 type: "Poster"
 permalink: /talks/2024-05-03-dhnb-huma-num-infrastructure

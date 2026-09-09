@@ -1,5 +1,9 @@
 ---
 title: "Les marqueurs de genre dans les interactions de la fiction policière (1945-1989)"
+authors:
+  - "Bouzereau, Camille"
+  - "Longrée, Dominique"
+  - "Faci, Adam"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2025-10-02-linguistique-corpus-marqueurs-genre

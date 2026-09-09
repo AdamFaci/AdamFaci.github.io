@@ -1,5 +1,9 @@
 ---
 title: "« AI Reading Club » : comment faire lire des agents d'intelligence artificielle « dans le genre »"
+authors:
+  - "Bréan, Simon"
+  - "Faci, Adam"
+  - "Schuh, Julien"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2025-06-02-dhllm-ai-reading-club

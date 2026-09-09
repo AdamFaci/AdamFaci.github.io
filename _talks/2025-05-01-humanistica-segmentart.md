@@ -1,5 +1,8 @@
 ---
 title: "SegmentArt, une méthode plus rapide pour annoter des images en utilisant SegmentAnything2"
+authors:
+  - "Maronet, Léa"
+  - "Faci, Adam"
 collection: talks
 type: "Conference talk"
 permalink: /talks/2025-05-01-humanistica-segmentart

@@ -1,5 +1,13 @@
 ---
 title: "A domain-adaptive LLM for SSH scholarly discovery, multilingual querying, literature synthesis and traceable research support"
+authors:
+  - "Faci, Adam"
+  - "Breton, Alice"
+  - "Frontini, Francesca"
+  - "Cuxac, Pascal"
+  - "Miaschi, Alessio"
+  - "Larrousse, Nicolas"
+  - "Pouyllau, Stéphane"
 collection: talks
 type: "Poster"
 permalink: /talks/2026-06-15-alt-edic-domain-adaptive-llm

@@ -1,5 +1,8 @@
 ---
 title: "A Review of Fine-Tuning for QA and a Proposal for a New Annotated Corpus"
+authors:
+  - "Breton, Alice"
+  - "Faci, Adam"
 collection: talks
 type: "Poster"
 permalink: /talks/2026-09-04-mashs-fine-tuning-qa-corpus
