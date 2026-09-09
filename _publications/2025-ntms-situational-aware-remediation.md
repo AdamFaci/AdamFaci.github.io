@@ -1,5 +1,10 @@
 ---
 title: "Towards a Situational Aware-Based Cybersecurity Remediation"
+authors:
+  - "Kanawati, Rayan"
+  - "Lammari, Nadira"
+  - "Faci, Adam"
+  - "Mimouni, Nada"
 collection: publications
 category: conferences
 excerpt: 'A situational-awareness-based remediation process for cybersecurity incidents, and the knowledge that has to be formalised for that process to be automated.'

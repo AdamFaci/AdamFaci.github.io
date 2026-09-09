@@ -1,5 +1,9 @@
 ---
 title: "RAG multiscalaire pour des explorations et études de corpus en histoire de l'art"
+authors:
+  - "Silvestre de Sacy, Antoine"
+  - "Faci, Adam"
+  - "Maronet, Léa"
 collection: publications
 category: manuscripts
 excerpt: 'Multiscalar retrieval-augmented generation for the exploration and study of art history corpora.'

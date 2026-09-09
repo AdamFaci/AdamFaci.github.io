@@ -1,5 +1,8 @@
 ---
 title: "SSH-Bench: A French–English Multitask Benchmark for Evaluating Language Models on Scholarly Literature in the Social Sciences and Humanities"
+authors:
+  - "Faci, Adam"
+  - "Breton, Alice"
 collection: publications
 category: conferences
 status: "Under review"

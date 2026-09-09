@@ -1,5 +1,8 @@
 ---
 title: "Validating Frozen Representations Under Confounding: Style as Transmission"
+authors:
+  - "Faci, Adam"
+  - "Maronet, Léa"
 collection: publications
 category: conferences
 status: "Under review"

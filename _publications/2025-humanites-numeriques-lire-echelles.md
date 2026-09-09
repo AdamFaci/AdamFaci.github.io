@@ -1,5 +1,10 @@
 ---
 title: "Lire à différentes échelles. Une analyse multiscalaire de la retrieval-augmented generation en sciences humaines et sociales"
+authors:
+  - "Silvestre de Sacy, Antoine"
+  - "Faci, Adam"
+  - "Maronet, Léa"
+  - "Pouyllau, Stéphane"
 collection: publications
 category: manuscripts
 excerpt: 'A research methodology combining retrieval-augmented generation with computational processing, applied to a corpus of art history journals and to the analysis of a contested concept: style.'

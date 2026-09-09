@@ -1,5 +1,7 @@
 ---
 title: "Function-Typed Routing to Neuro-Symbolic Plans for Scholarly RAG"
+authors:
+  - "Faci, Adam"
 collection: publications
 category: manuscripts
 status: "In preparation"

@@ -1,5 +1,13 @@
 ---
 title: "Integrating Knowledge Graphs and Multilingual Scholarly Corpora for Domain-Adaptive LLMs in SSH"
+authors:
+  - "Faci, Adam"
+  - "Miaschi, Alessio"
+  - "Combe, Anne"
+  - "Cuxac, Pascal"
+  - "Frontini, Francesca"
+  - "Larrousse, Nicolas"
+  - "Pouyllau, Stéphane"
 collection: publications
 category: conferences
 excerpt: 'An on-going use case in the European project LLMs4EU and the ALT-EDIC infrastructure, adapting foundation models to SSH research practices and to tasks such as question answering, comparative document analysis and literature review.'

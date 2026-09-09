@@ -1,5 +1,8 @@
 ---
 title: "The Catalogue Is Part of the Model: Archival Categories in Computational Art History"
+authors:
+  - "Faci, Adam"
+  - "Breton, Alice"
 collection: publications
 category: conferences
 status: "Under review"

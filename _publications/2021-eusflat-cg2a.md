@@ -1,5 +1,9 @@
 ---
 title: "CG2A: Conceptual Graphs Generation Algorithm"
+authors:
+  - "Faci, Adam"
+  - "Lesot, Marie-Jeanne"
+  - "Laudy, Claire"
 collection: publications
 category: conferences
 excerpt: 'An algorithm for building synthetic conceptual graph databases that exploits most of the expressivity of the formalism, so that CG algorithms can be tested and validated.'

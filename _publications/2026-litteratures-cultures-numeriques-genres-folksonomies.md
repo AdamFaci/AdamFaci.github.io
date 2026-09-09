@@ -1,5 +1,8 @@
 ---
 title: "Théorie des genres comparatiste et folksonomies"
+authors:
+  - "Langlet, Irène"
+  - "Faci, Adam"
 collection: publications
 category: manuscripts
 excerpt: 'What social-web tagging does to comparative genre theory: how hundreds of amateur labelling practices recompose literary corpora that critics had constituted differently.'

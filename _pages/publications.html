@@ -19,15 +19,49 @@ section: publications
 {% comment %} Work under review sits in the main chronological run. Work still
    in preparation is left out of this list; it has its own section below. {% endcomment %}
 {% assign glance = published | concat: under_review | sort: "date" | reverse %}
+{% assign ob = "{" %}{% assign cb = "}" %}
 
-<ul class="compact-list">
+<ul class="compact-list compact-list--cite">
 {% for post in glance %}
+  {%- assign slug = post.title | slugify -%}
+  {%- assign yr = post.date | date: "%Y" -%}
+  {%- assign firstword = post.title | slugify | split: "-" | first -%}
+  {%- capture bibkey %}faci{{ yr }}{{ firstword }}{% endcapture -%}
+  {%- capture bibauthors %}{% for a in post.authors %}{{ a }}{% unless forloop.last %} and {% endunless %}{% endfor %}{% endcapture -%}
+  {%- if post.status -%}{%- assign btype = "unpublished" -%}
+  {%- elsif post.category == "conferences" -%}{%- assign btype = "inproceedings" -%}
+  {%- else -%}{%- assign btype = "article" -%}{%- endif -%}
+  {%- assign doi = "" -%}
+  {%- if post.paperurl contains "doi.org/" -%}{%- assign doi = post.paperurl | split: "doi.org/" | last -%}{%- endif -%}
   <li>
-    <span class="compact-list__year">{{ post.date | date: "%Y" }}{% if post.status %}<span class="compact-list__status">({{ post.status }})</span>{% endif %}</span>
-    <span>
-      <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
+    <span class="compact-list__year">{{ yr }}{% if post.status %}<span class="compact-list__status">({{ post.status }})</span>{% endif %}</span>
+    <span class="compact-list__main">
+      <a class="compact-list__title" href="#{{ slug }}">{{ post.title }}</a>
+      <span class="compact-list__authors">{% for a in post.authors %}{%- assign disp = a | split: ", " | reverse | join: " " -%}{% if a == "Faci, Adam" %}<strong>{{ disp }}</strong>{% else %}{{ disp }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
       <span class="compact-list__venue">{{ post.venue }}</span>
     </span>
+    <span class="compact-list__actions">
+      <button class="cite-btn" type="button" aria-expanded="false" aria-controls="cite-{{ slug }}">Cite</button>
+    </span>
+    <div class="cite-panel" id="cite-{{ slug }}" hidden>
+      <div class="cite-block">
+        <div class="cite-block__head"><span>BibTeX</span><button class="copy-btn" type="button">Copy</button></div>
+        <pre class="cite-src">@{{ btype }}{{ ob }}{{ bibkey }},
+  author  = {{ ob }}{{ bibauthors }}{{ cb }},
+  title   = {{ ob }}{{ post.title }}{{ cb }},
+  year    = {{ ob }}{{ yr }}{{ cb }},
+{% if btype == "inproceedings" %}  booktitle = {{ ob }}{{ post.venue }}{{ cb }},
+{% else %}  journal = {{ ob }}{{ post.venue }}{{ cb }},
+{% endif %}{% if doi != "" %}  doi     = {{ ob }}{{ doi }}{{ cb }},
+{% endif %}{% if post.paperurl %}  url     = {{ ob }}{{ post.paperurl }}{{ cb }},
+{% endif %}{% if post.status %}  note    = {{ ob }}{{ post.status }}{{ cb }},
+{% endif %}{{ cb }}</pre>
+      </div>
+      <div class="cite-block">
+        <div class="cite-block__head"><span>APA</span><button class="copy-btn" type="button">Copy</button></div>
+        <pre class="cite-src">{{ post.citation | strip_html | replace: "&ndash;", "–" | replace: "&apos;", "'" | replace: "&amp;", "&" }}</pre>
+      </div>
+    </div>
   </li>
 {% endfor %}
 </ul>

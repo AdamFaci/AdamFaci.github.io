@@ -1,5 +1,7 @@
 ---
 title: "Knowledge Lattices: Diagnosing and Training Structural Competence in Language Models"
+authors:
+  - "Faci, Adam"
 collection: publications
 category: manuscripts
 status: "In preparation"

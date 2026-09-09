@@ -1,5 +1,8 @@
 ---
 title: "OntoGraphRag : lunettes ontologiques pour agents conversationnels et dialectique des textes"
+authors:
+  - "Faci, Adam"
+  - "Provendier, Émile"
 collection: publications
 category: manuscripts
 status: "Under review"

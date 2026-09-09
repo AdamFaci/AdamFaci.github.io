@@ -1,5 +1,9 @@
 ---
 title: "cgSpan: Pattern Mining in Conceptual Graphs"
+authors:
+  - "Faci, Adam"
+  - "Lesot, Marie-Jeanne"
+  - "Laudy, Claire"
 collection: publications
 category: conferences
 excerpt: 'A conceptual graph frequent pattern mining algorithm that extends DMGM-GSM with three further kinds of knowledge from the CG formalism: the fixed arity of relation nodes, signatures, and inference rules.'

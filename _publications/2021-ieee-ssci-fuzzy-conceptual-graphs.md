@@ -1,5 +1,9 @@
 ---
 title: "Fuzzy Conceptual Graphs: a comparative discussion"
+authors:
+  - "Faci, Adam"
+  - "Lesot, Marie-Jeanne"
+  - "Laudy, Claire"
 collection: publications
 category: conferences
 excerpt: 'A comparative study of existing fuzzy extensions of conceptual graphs, organised by which part of the formalism each definition affects and which constraint it relaxes.'

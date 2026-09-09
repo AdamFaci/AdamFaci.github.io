@@ -1,5 +1,7 @@
 ---
 title: "Structuration argumentative des débats parlementaires par IA. Vers une modélisation interprétable des dynamiques discursives"
+authors:
+  - "Faci, Adam"
 collection: publications
 category: conferences
 excerpt: 'An interpretable computational framework for structuring parliamentary debates through argumentative annotation, semantic clustering and relational graph modeling, applied to French National Assembly open data.'

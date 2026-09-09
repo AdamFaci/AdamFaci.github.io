@@ -1,5 +1,7 @@
 ---
 title: "Status Survives Reasoning: Disaggregating Identity Bias in LLM-Generated Peer Review"
+authors:
+  - "Faci, Adam"
 collection: publications
 category: manuscripts
 status: "In preparation"

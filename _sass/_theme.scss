@@ -358,6 +358,97 @@ p > code, a > code, li > code, td > code, .btn { box-shadow: none !important; }
   font-variant-numeric: tabular-nums;
   padding-top: 0.15em;
 }
+/* Author line, and the per-entry citation control. Only the publications
+   "At a glance" list carries these, via .compact-list--cite. */
+.compact-list__authors {
+  display: block;
+  margin-top: 0.2em;
+  color: var(--text);
+  font-size: 0.86em;
+  line-height: 1.45;
+}
+.compact-list__authors strong { color: var(--text-strong); font-weight: 600; }
+
+.compact-list--cite li { grid-template-columns: 5.5rem 1fr auto; }
+
+.compact-list__actions { align-self: start; padding-top: 0.15em; }
+
+.cite-btn {
+  padding: 0.2em 0.6em;
+  border: 1px solid var(--border-ui);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.cite-btn:hover { color: var(--accent); border-color: var(--accent); }
+.cite-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cite-btn[aria-expanded="true"] { color: var(--accent); border-color: var(--accent); }
+
+.cite-panel {
+  grid-column: 1 / -1;
+  margin: 0.7em 0 0.3em;
+  padding: 0.9em 1em;
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--accent);
+  border-radius: 2px;
+  background: var(--accent-tint);
+}
+.cite-block + .cite-block { margin-top: 0.9em; }
+
+.cite-block__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  margin-bottom: 0.35em;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.copy-btn {
+  padding: 0.1em 0.5em;
+  border: 1px solid var(--border-ui);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.copy-btn:hover { color: var(--accent); border-color: var(--accent); }
+.copy-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.cite-src {
+  margin: 0;
+  padding: 0.6em 0.8em;
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.76em;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media screen and (max-width: 37.5em) {
+  .compact-list--cite li { grid-template-columns: 1fr; }
+  .compact-list__actions { justify-self: start; padding-top: 0.5em; }
+}
+
 .compact-list__status {
   display: block;
   margin-top: 0.15em;
