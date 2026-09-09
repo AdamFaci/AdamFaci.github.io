@@ -39,3 +39,7 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* Theme layer: dark by default, light via [data-theme="light"].
+   Must stay last so it overrides the colours compiled above. */
+@import "theme";

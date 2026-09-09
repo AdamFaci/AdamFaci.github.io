@@ -1,0 +1,185 @@
+---
+layout: archive
+title: "CV"
+permalink: /cv/
+author_profile: true
+redirect_from:
+  - /resume
+---
+
+{% include base_path %}
+
+<p class="section-lead">PhD in Artificial Intelligence. Interdisciplinary researcher working at the intersection of AI and the social sciences and humanities, on knowledge graphs and large language models.</p>
+
+<a class="cv-download" href="{{ base_path }}/files/CV_Adam_Faci.pdf"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download the full CV (PDF)</a>
+
+<h2 class="cv-heading">Education</h2>
+
+<div class="cv-section">
+  <div class="cv-entry">
+    <div class="cv-entry__date">2019 &ndash; 2022</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__title">PhD in Artificial Intelligence</p>
+      <p class="cv-entry__org">LIP6, Sorbonne Université &middot; Paris, France</p>
+      <p class="cv-entry__note"><em>Representation, Simulation and Mining of Knowledge in the Conceptual Graph Formalism.</em></p>
+      <p class="cv-entry__note">Jury: Jean-Gabriel Ganascia, Cyril de Runz, Trevor Martin, Maria Rifqi, Marie-Jeanne Lesot, Claire Laudy. Degree awarded unanimously. <a href="https://theses.hal.science/tel-03982935v1">Read the thesis</a></p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">2015 &ndash; 2018</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__title">Engineering degree in Computer Science</p>
+      <p class="cv-entry__org">TELECOM Nancy &middot; Villers-lès-Nancy, France</p>
+      <p class="cv-entry__note">Major in software engineering; artificial intelligence, software development, project management.</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="cv-heading">Positions</h2>
+
+<div class="cv-section">
+  <div class="cv-entry">
+    <div class="cv-entry__date">Oct. 2023 &ndash; Mar. 2027</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__title">Postdoctoral researcher &mdash; large language models for the SSH</p>
+      <p class="cv-entry__org">CNRS, Huma-Num / HN Lab &middot; Paris, France</p>
+      <p class="cv-entry__note">Interdisciplinary research and research administration within a CNRS <em>infrastructure de recherche étoile</em> (IR*).</p>
+      <p class="cv-entry__note">Lead of the <em>ReSearch SSH</em> use case &mdash; an AI research-assistant agent for the social sciences and humanities &mdash; within the European project LLMs4EU.</p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">Apr. &ndash; Sep. 2023</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__title">Postdoctoral researcher &mdash; ontologies for cybersecurity</p>
+      <p class="cv-entry__org">CNAM &middot; Paris, France</p>
+      <p class="cv-entry__note">Operationalisation of ontologies for incident response; co-supervision of a doctoral student.</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="cv-heading">Research areas</h2>
+
+<div class="cv-section">
+  <div class="cv-entry">
+    <div class="cv-entry__date">Generation</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__note">Retrieval-augmented generation, scholarly agents, and function-typed routing to neuro-symbolic plans.</p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">Knowledge</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__note">Knowledge graphs, conceptual graphs, ontologies, and graph pattern mining.</p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">Vision</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__note">Computer vision for art history and photojournalism &mdash; segmentation, clustering and frugal pipelines built on SAM 2, DINO and YOLO.</p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">Evaluation</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__note">Benchmarking and bias in generative language models, and research ethics for SSH communities.</p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">Epistemology</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__note">Socio-history of AI methods in the humanities, and the epistemological effects of adopting them.</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="cv-heading">Publications</h2>
+
+<ul class="compact-list">
+{% assign cv_pubs = site.publications | where_exp: "post", "post.status == nil" | sort: "date" | reverse %}
+{% for post in cv_pubs %}
+  <li>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <a class="compact-list__title" href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+    <span class="compact-list__venue">&nbsp;&middot; {{ post.venue }}</span>
+  </li>
+{% endfor %}
+</ul>
+
+<p class="section-lead">Work under review and in preparation is listed on the <a href="{{ base_path }}/publications/">publications page</a>.</p>
+
+<h2 class="cv-heading">Talks and presentations</h2>
+
+<ul class="compact-list">
+{% for post in site.talks reversed %}
+  <li>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <a class="compact-list__title" href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+    <span class="compact-list__venue">&nbsp;&middot; {{ post.type }}, {{ post.venue }}</span>
+  </li>
+{% endfor %}
+</ul>
+
+<h2 class="cv-heading">Teaching</h2>
+
+<ul class="compact-list">
+{% for post in site.teaching reversed %}
+  <li>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <a class="compact-list__title" href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+    <span class="compact-list__venue">&nbsp;&middot; {{ post.type }}, {{ post.venue }}</span>
+  </li>
+{% endfor %}
+</ul>
+
+<h2 class="cv-heading">Service and leadership</h2>
+
+<div class="cv-section">
+  <div class="cv-entry">
+    <div class="cv-entry__date">Since Nov. 2024</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__title">Co-director, PictorIA working group on image annotation standards in SSH</p>
+      <p class="cv-entry__org">With Emmanuel Château-Dutier, Léa Maronet and Alice Truc</p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">2025 &ndash; 2026</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__title">Co-organiser, seminar <em>Interprétations artificielles</em></p>
+      <p class="cv-entry__org">With Julien Schuh &middot; participant in 2025, co-organiser in 2026; edited volume in preparation</p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">2026</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__title">Session chair, &ldquo;Projets et méthodes pour la récupération et structuration de corpus&rdquo;</p>
+      <p class="cv-entry__org">Third Médias 19 congress, on invitation</p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">2024 &ndash; 2025</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__title">Doctoral co-supervision &mdash; ontology for cybersecurity incident response</p>
+      <p class="cv-entry__org">Doctoral work of Rayan Kanawati, with Nadira Lammari and Nada Mimouni (CNAM)</p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">Ongoing</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__title">Research administration &mdash; ANR, Labcom and European calls</p>
+      <p class="cv-entry__org">With Stéphane Pouyllau and Léa Maronet &middot; research strategy and partner mobilisation</p>
+    </div>
+  </div>
+  <div class="cv-entry">
+    <div class="cv-entry__date">2019 &ndash; 2021</div>
+    <div class="cv-entry__body">
+      <p class="cv-entry__title">Coordinator, inter-doctoral working group</p>
+      <p class="cv-entry__org">THALES &middot; Palaiseau, France</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="cv-heading">Doctoral defence report</h2>
+
+<p class="section-lead">Jury: J.-G. Ganascia, C. de Runz, T. Martin, M.-J. Lesot, C. Laudy.</p>
+
+<p>The jury noted that the thesis is structured around three new contributions aimed at extracting frequent conceptual graph patterns and at validating that extraction. The first — whose originality the jury underlined — extracts frequent conceptual graph patterns using symbolic information fusion operators and their specific properties. The second generates synthetic conceptual graph databases, used in the thesis to validate the pattern extraction. The third is a critical review of the introduction of fuzzy modalities into conceptual graphs, with a view to mining frequent fuzzy conceptual graph patterns. The degree of <em>docteur en informatique</em> of Sorbonne Université was awarded unanimously.</p>

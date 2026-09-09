@@ -1,0 +1,33 @@
+---
+layout: archive
+title: "Code"
+permalink: /code/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p class="section-lead">Research software released publicly. Everything below lives on <a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>.</p>
+
+<div class="repo-card">
+  <div class="repo-card__header">
+    <h2 class="repo-card__name"><a href="https://github.com/AdamFaci/segmentart">SegmentART</a></h2>
+    <span class="repo-card__tag">Python</span>
+    <span class="repo-card__tag">Apache-2.0</span>
+  </div>
+  <div class="repo-card__body">
+    <p>Assisted image annotation combining manual prompts &mdash; box, positive and negative points &mdash; with automatic segmentation by SAM&nbsp;2, followed by semantic grouping and structured, Visual&nbsp;Genome-style description. It is designed to cut both the time and the number of interactions a dense annotation requires, and it records fine-grained interaction telemetry so that annotation strategies can be compared against one another.</p>
+    <p>The point is not only speed. In the humanities the hard part is that one object admits several levels of interpretation, so the tool aims at <em>richer descriptions &mdash; attributes, relations, hierarchies &mdash; rather than flat labels</em>. Annotation runs in two phases: first load images, draw boxes, add positive and negative points, run SAM&nbsp;2 and validate the masks; then group validated objects by similarity and generate multi-level semantic descriptions. Masks are stored as lossless compact RLE, two to three orders of magnitude smaller than dense arrays, and exports target Visual Genome, COCO and a custom format.</p>
+    <p>The codebase is split in two layers: a <code>backend/</code> holding the logic with no interface dependency, and a Streamlit <code>frontend/</code>. That separation is deliberate &mdash; it lets the same logic drive other annotation platforms such as Label Studio or CVAT. Python 3.11+; SAM&nbsp;2 is an optional dependency installed separately.</p>
+  </div>
+  <dl class="repo-card__meta">
+    <dt>Links</dt>
+    <dd>
+      <a href="https://github.com/AdamFaci/segmentart">Source</a>
+      <a href="https://hal.science/hal-05742614v1">HAL deposit</a>
+      <a href="{{ base_path }}/projects/segmentart/">Research context</a>
+    </dd>
+  </dl>
+</div>
+
+<p class="section-lead">Developed with Léa Maronet. Source code under Apache License 2.0, documentation under CC BY 4.0.</p>

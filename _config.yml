@@ -27,14 +27,15 @@ author:
   bio              : "Postdoctoral researcher — large language models and knowledge graphs for the social sciences and humanities."
   location         : "Paris, France"
   employer         : "Huma-Num (UAR 3598) - CNRS"
-  uri              : "https://cv.hal.science/adam-faci"
+  uri              : "https://www.huma-num.fr/adam-faci/"
   email            : "adam.faci@huma-num.fr" 
 
   # Academic websites
   arxiv            : "https://arxiv.org/search/cs?searchtype=author&query=Faci,+A"
   googlescholar    : "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AKCpqFyAC3WxT7yttSNvj7rhHsSxJ4Np-fdohm6W6HJQX4kgHcUZT_Dxfdl-MwzDwjFNa8k6iwMpToDPbkmPew&user=aez85awAAAAJ"
   hal              : "https://cv.hal.science/adam-faci"
-  orcid            : "https://orcid.org/my-orcid?orcid=0000-0001-7216-9487"
+  idref            : "https://www.idref.fr/267623887"
+  orcid            : "https://orcid.org/0000-0001-7216-9487"
   pubmed           : # URL
   researchgate     : "https://www.researchgate.net/profile/Adam_Faci"
 

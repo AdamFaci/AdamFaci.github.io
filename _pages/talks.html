@@ -5,12 +5,39 @@ permalink: /talks/
 author_profile: true
 ---
 
-{% if site.talkmap_link == true %}
+{% include base_path %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+<p class="section-lead">Conference papers, invited talks, posters and seminars. Expand any entry below for the description.</p>
 
-{% endif %}
+{% assign all_talks = site.talks | sort: "date" | reverse %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
+<h2 class="cv-heading">At a glance</h2>
+
+<ul class="compact-list">
+{% for post in all_talks %}
+  <li>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
+    <span class="compact-list__venue">&nbsp;&middot; {{ post.type }}, {{ post.venue }}</span>
+  </li>
+{% endfor %}
+</ul>
+
+<h2 class="cv-heading">In detail</h2>
+
+{% for post in all_talks %}
+<details class="detail-item" id="{{ post.title | slugify }}">
+  <summary>{{ post.title }}
+    <span class="detail-item__meta">
+      {{ post.type }} &middot; {{ post.venue }}{% if post.location and post.location != "" %} &middot; {{ post.location }}{% endif %} &middot; {{ post.date | date: "%B %Y" }}
+    </span>
+  </summary>
+  <div class="detail-item__body">
+    {{ post.content }}
+    <div class="detail-item__links">
+      <a href="{{ base_path }}{{ post.url }}">Full entry</a>
+      {% if post.paperurl %}<a href="{{ post.paperurl }}">HAL</a>{% endif %}
+    </div>
+  </div>
+</details>
 {% endfor %}

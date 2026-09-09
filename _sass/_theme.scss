@@ -1,0 +1,585 @@
+/* ==========================================================================
+   THEME LAYER
+   Dark by default; light when <html data-theme="light">.
+
+   Loaded last in main.scss so it overrides the compiled Minimal Mistakes
+   colours. Nothing here changes layout — only colour, alignment and the
+   handful of components added on top of the template.
+   ========================================================================== */
+
+:root {
+  --bg:             #14171a;
+  --bg-elevated:    #1d2126;
+  --bg-sunken:      #101316;
+  --bg-code:        #1b1f24;
+  --text:           #d7dde3;
+  --text-strong:    #f0f4f8;
+  --text-muted:     #97a2ad;
+  --border:         #2b323a;
+  --border-strong:  #3b444e;
+  --link:           #7cc0dd;
+  --link-hover:     #a6d8ef;
+  --link-visited:   #b0a5e0;
+  --accent:         #7cc0dd;
+  --shadow:         rgba(0, 0, 0, 0.55);
+  --selection-bg:   #2f4a58;
+
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg:             #ffffff;
+  --bg-elevated:    #ffffff;
+  --bg-sunken:      #f7f8f9;
+  --bg-code:        #fafafa;
+  --text:           #494e52;
+  --text-strong:    #202325;
+  --text-muted:     #808a93;
+  --border:         #e4e6e8;
+  --border-strong:  #c3c8cc;
+  --link:           #2f7f99;
+  --link-hover:     #1d5e73;
+  --link-visited:   #6b5fa8;
+  --accent:         #2f7f99;
+  --shadow:         rgba(0, 0, 0, 0.18);
+  --selection-bg:   #cfe7f1;
+
+  color-scheme: light;
+}
+
+/*
+   Base surfaces
+   ========================================================================== */
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--text-strong);
+}
+
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.archive__subtitle {
+  color: var(--text-strong);
+}
+
+a { color: var(--link); }
+a:hover, a:active, a:focus { color: var(--link-hover); }
+
+.page__content a:visited,
+.archive__item-excerpt a:visited { color: var(--link-visited); }
+
+hr,
+.page__meta,
+.archive__subtitle,
+.page__share,
+.page__footer,
+.page__related,
+.pagination--pager {
+  border-color: var(--border);
+}
+
+u, ins { border-bottom-color: var(--text); }
+abbr[title], abbr[data-original-title] { border-bottom-color: var(--text-muted); }
+blockquote { border-left-color: var(--border-strong); color: var(--text-muted); }
+
+.page__meta,
+.page__date,
+.archive__subtitle,
+figcaption,
+.page__footer,
+.page__footer .fas,
+.page__footer .fab,
+.page__footer .far {
+  color: var(--text-muted);
+}
+
+/*
+   Masthead and navigation
+   ========================================================================== */
+
+.masthead {
+  background: var(--bg);
+  border-bottom-color: var(--border);
+}
+
+.greedy-nav { background: transparent; }
+.greedy-nav a { color: var(--text); }
+.greedy-nav a:hover { color: var(--link-hover); }
+
+.greedy-nav .hidden-links {
+  background: var(--bg-elevated);
+  border-color: var(--border-strong);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+.greedy-nav .hidden-links a:hover {
+  color: var(--link-hover);
+  background: var(--bg-sunken);
+}
+.greedy-nav .hidden-links:before { border-color: var(--border-strong) transparent; }
+.greedy-nav .hidden-links:after { border-color: var(--bg-elevated) transparent; }
+
+.greedy-nav button { background-color: transparent; color: var(--text); }
+.navicon,
+.navicon:before,
+.navicon:after { background: var(--text); }
+
+/*
+   Sidebar / author profile
+   ========================================================================== */
+
+.sidebar,
+.author__urls-wrapper { color: var(--text); }
+
+.author__avatar img {
+  border-color: var(--border);
+  background: var(--bg-elevated);
+}
+
+.author__bio,
+.author__desktop { color: var(--text-muted); }
+
+.author__urls {
+  background: var(--bg-elevated);
+  border-color: var(--border-strong);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+.author__urls:before { border-color: var(--border-strong) transparent; }
+.author__urls:after { border-color: var(--bg-elevated) transparent; }
+
+@media screen and (min-width: 64em) {
+  .author__urls { background: transparent; box-shadow: none; }
+}
+
+/* Monochrome profile icons: brand colours read badly on a dark ground.
+   The icon takes the muted text colour and lights up on hover. */
+.author__urls a { color: var(--text); }
+.author__urls a:hover { color: var(--link-hover); }
+.author__urls .ai,
+.author__urls .fa,
+.author__urls .fas,
+.author__urls .fab,
+.author__urls .far {
+  color: var(--text-muted) !important;
+  transition: color 0.2s ease;
+}
+.author__urls a:hover .ai,
+.author__urls a:hover .fa,
+.author__urls a:hover .fas,
+.author__urls a:hover .fab,
+.author__urls a:hover .far {
+  color: var(--accent) !important;
+}
+
+.btn--inverse {
+  background-color: var(--bg-elevated) !important;
+  border-color: var(--border-strong) !important;
+  color: var(--text) !important;
+}
+.btn--inverse:hover { color: var(--text-strong) !important; }
+
+/*
+   Footer
+   ========================================================================== */
+
+.page__footer {
+  background-color: var(--bg-sunken);
+  border-top-color: var(--border);
+  color: var(--text-muted);
+}
+
+/*
+   Archive listings
+   ========================================================================== */
+
+.archive__item-title { border-bottom-color: var(--border); }
+.archive__item-title a { color: var(--text-strong); }
+.archive__item-title a:hover { color: var(--link-hover); }
+.archive__item-excerpt { color: var(--text); }
+
+.taxonomy__index,
+.page__taxonomy-item {
+  background: var(--bg-elevated);
+  border-color: var(--border);
+  color: var(--text);
+}
+.page__taxonomy-item:hover { color: var(--link-hover); }
+
+/*
+   Code
+   ========================================================================== */
+
+p > code, a > code, li > code, figcaption > code, td > code {
+  background: var(--bg-code);
+  border-color: var(--border);
+  color: var(--text-strong);
+  box-shadow: none;
+}
+
+div.highlighter-rouge,
+figure.highlight {
+  background-color: var(--bg-code);
+  border-color: var(--border);
+  box-shadow: none;
+}
+div.highlighter-rouge:before,
+figure.highlight:before {
+  background-color: var(--bg-sunken);
+  color: var(--text-muted);
+}
+
+/* Syntax tokens, dark. The compiled sheet ships Solarized Light; these
+   override only what is legible-critical on a dark ground. */
+:root:not([data-theme="light"]) {
+  .highlight { color: #d7dde3; }
+  .highlight .c, .highlight .c1, .highlight .cm, .highlight .cs { color: #7d8a94; }
+  .highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr { color: #a6d189; }
+  .highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sd { color: #7bd4c4; }
+  .highlight .n, .highlight .nn, .highlight .nx { color: #d7dde3; }
+  .highlight .nb, .highlight .nc, .highlight .nf { color: #7cc0dd; }
+  .highlight .m, .highlight .mi, .highlight .mf { color: #e0a882; }
+  .highlight .o, .highlight .ow { color: #c6a0dd; }
+  .highlight .gd { color: #e88; }
+  .highlight .gi { color: #8e8; }
+}
+
+/*
+   Tables, notices, forms
+   ========================================================================== */
+
+table { border-color: var(--border); }
+th { background: var(--bg-sunken); color: var(--text-strong); border-color: var(--border); }
+td { border-color: var(--border); }
+tr:nth-child(even) { background: var(--bg-sunken); }
+
+.notice, .notice--primary, .notice--info,
+.notice--warning, .notice--success, .notice--danger {
+  background-color: var(--bg-elevated);
+  border-left-color: var(--border-strong);
+  color: var(--text);
+  box-shadow: none;
+}
+
+input[type="text"], input[type="email"], input[type="search"], textarea, select {
+  background-color: var(--bg-elevated);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.search-content,
+.search-content__inner-wrap { background: var(--bg); }
+
+/*
+   Justified body text
+   Justification without hyphenation leaves rivers of white space, so both
+   are set together. The <html lang> attribute drives the hyphenation
+   dictionary.
+   ========================================================================== */
+
+.page__content p,
+.page__content li,
+.page__content dd,
+.archive > p,
+.archive > ul li,
+.archive > ol li,
+.archive__item-excerpt,
+.author__bio {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+/* Things that must never be justified. */
+.cv-entry__date,
+.cv-entry__title,
+.cv-entry__org,
+.compact-list li,
+.repo-card__meta,
+.section-lead,
+th, td, pre, code,
+.page__meta,
+.page__date,
+.archive__subtitle,
+figcaption {
+  text-align: left;
+  -webkit-hyphens: manual;
+      -ms-hyphens: manual;
+          hyphens: manual;
+}
+
+/*
+   Theme toggle
+   ========================================================================== */
+
+.theme-toggle {
+  position: fixed;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 10px var(--shadow);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Show the sun when dark is active, the moon when light is active. */
+.theme-toggle__sun { display: inline; }
+.theme-toggle__moon { display: none; }
+:root[data-theme="light"] .theme-toggle__sun { display: none; }
+:root[data-theme="light"] .theme-toggle__moon { display: inline; }
+
+@media print {
+  .theme-toggle { display: none; }
+}
+
+/*
+   CV
+   A year column beside the entry, no bullets, no list markers.
+   ========================================================================== */
+
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 0 2em;
+  padding: 0.55em 1.1em;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  background: var(--bg-elevated);
+  color: var(--text) !important;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.cv-download:hover {
+  color: var(--text-strong) !important;
+  border-color: var(--accent);
+}
+
+.cv-heading,
+.archive > h2 {
+  margin: 2.5em 0 0.8em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--text-strong);
+  font-size: 0.82em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.archive > h2:first-of-type,
+.cv-heading:first-of-type { margin-top: 1.5em; }
+
+.cv-section { margin-bottom: 2.5em; }
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0 1.5rem;
+  padding: 0.9em 0;
+  border-top: 1px solid var(--border);
+}
+.cv-entry:last-child { border-bottom: 1px solid var(--border); }
+
+.cv-entry__date {
+  color: var(--text-muted);
+  font-size: 0.82em;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+  padding-top: 0.25em;
+  white-space: nowrap;
+}
+
+.cv-entry__body { min-width: 0; }
+
+.cv-entry__title {
+  margin: 0 0 0.15em;
+  color: var(--text-strong);
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.cv-entry__org {
+  margin: 0 0 0.35em;
+  color: var(--text-muted);
+  font-size: 0.88em;
+}
+
+.cv-entry__note {
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.55;
+}
+.cv-entry__note + .cv-entry__note { margin-top: 0.4em; }
+
+@media screen and (max-width: 37.5em) {
+  .cv-entry { grid-template-columns: 1fr; gap: 0.2rem; }
+  .cv-entry__date { padding-top: 0; }
+}
+
+/*
+   Compact + expandable listings (publications, talks)
+   ========================================================================== */
+
+.compact-list {
+  margin: 0 0 1em;
+  padding: 0;
+  list-style: none;
+}
+.compact-list li {
+  margin: 0;
+  padding: 0.5em 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.92em;
+  line-height: 1.5;
+}
+.compact-list li:last-child { border-bottom: 1px solid var(--border); }
+
+.compact-list__year {
+  display: inline-block;
+  min-width: 3.2em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.compact-list__title { color: var(--text-strong); }
+.compact-list a.compact-list__title:hover { color: var(--link-hover); }
+.compact-list__venue { color: var(--text-muted); }
+
+.detail-item {
+  border-top: 1px solid var(--border);
+  /* clear the fixed masthead when jumped to from an anchor */
+  scroll-margin-top: 5rem;
+}
+.detail-item:last-of-type { border-bottom: 1px solid var(--border); }
+
+.detail-item > summary {
+  padding: 0.75em 0.2em 0.75em 1.4em;
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  color: var(--text-strong);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.detail-item > summary::-webkit-details-marker { display: none; }
+.detail-item > summary:hover { color: var(--link-hover); }
+
+.detail-item > summary:before {
+  content: "";
+  position: absolute;
+  left: 0.25em;
+  top: 1.25em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.32em 0 0.32em 0.5em;
+  border-color: transparent transparent transparent var(--text-muted);
+  transition: transform 0.15s ease;
+}
+.detail-item[open] > summary:before { transform: rotate(90deg); }
+
+.detail-item__meta {
+  display: block;
+  margin-top: 0.2em;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  font-weight: 400;
+}
+
+.detail-item__body {
+  padding: 0 0.2em 1.2em 1.4em;
+  font-size: 0.94em;
+}
+.detail-item__body p { text-align: justify; }
+.detail-item__body p:last-child { margin-bottom: 0; }
+
+.detail-item__links {
+  margin-top: 0.8em;
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+.detail-item__links a { margin-right: 1em; white-space: nowrap; }
+
+.section-lead {
+  margin-bottom: 1.5em;
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+/*
+   Code / repository cards
+   ========================================================================== */
+
+.repo-card {
+  padding: 1.3em 1.4em;
+  margin-bottom: 1.5em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-elevated);
+}
+.repo-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6em;
+  margin-bottom: 0.7em;
+}
+.repo-card__name {
+  margin: 0;
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+.repo-card__name a { color: inherit; }
+.repo-card__name a:hover { color: var(--link-hover); }
+
+.repo-card__tag {
+  padding: 0.15em 0.55em;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+  color: var(--text-muted);
+  font-size: 0.72em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.repo-card__body p { text-align: justify; }
+.repo-card__body p:last-child { margin-bottom: 0; }
+
+.repo-card__meta {
+  margin-top: 1em;
+  padding-top: 0.8em;
+  border-top: 1px solid var(--border);
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+.repo-card__meta a { margin-right: 1.1em; white-space: nowrap; }
+.repo-card__meta dt { display: none; }

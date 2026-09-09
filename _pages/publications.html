@@ -1,0 +1,91 @@
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p class="section-lead">A complete and continuously updated record is available on <a href="{{ site.author.hal }}">HAL</a>, <a href="{{ site.author.orcid }}">ORCID</a> and <a href="{{ site.author.googlescholar }}">Google Scholar</a>. Expand any entry below for the abstract and links.</p>
+
+{% assign published = site.publications | where_exp: "post", "post.status == nil" | sort: "date" | reverse %}
+{% assign under_review = site.publications | where: "status", "Under review" | sort: "date" | reverse %}
+{% assign in_prep = site.publications | where: "status", "In preparation" | sort: "date" | reverse %}
+
+<h2 class="cv-heading">At a glance</h2>
+
+<ul class="compact-list">
+{% for post in published %}
+  <li>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
+    <span class="compact-list__venue">&nbsp;&middot; {{ post.venue }}</span>
+  </li>
+{% endfor %}
+{% for post in under_review %}
+  <li>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
+    <span class="compact-list__venue">&nbsp;&middot; {{ post.venue }}</span>
+  </li>
+{% endfor %}
+{% for post in in_prep %}
+  <li>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
+    <span class="compact-list__venue">&nbsp;&middot; {{ post.venue }}</span>
+  </li>
+{% endfor %}
+</ul>
+
+<h2 class="cv-heading">Published and accepted</h2>
+
+{% for post in published %}
+<details class="detail-item" id="{{ post.title | slugify }}">
+  <summary>{{ post.title }}
+    <span class="detail-item__meta">{{ post.venue }} &middot; {{ post.date | date: "%Y" }}</span>
+  </summary>
+  <div class="detail-item__body">
+    {{ post.content }}
+    {% if post.citation %}<p class="detail-item__links">{{ post.citation }}</p>{% endif %}
+    <div class="detail-item__links">
+      <a href="{{ base_path }}{{ post.url }}">Full entry</a>
+      {% if post.paperurl %}<a href="{{ post.paperurl }}">HAL</a>{% endif %}
+      {% if post.doi %}<a href="https://doi.org/{{ post.doi }}">DOI</a>{% endif %}
+    </div>
+  </div>
+</details>
+{% endfor %}
+
+<h2 class="cv-heading">Under review</h2>
+
+{% for post in under_review %}
+<details class="detail-item" id="{{ post.title | slugify }}">
+  <summary>{{ post.title }}
+    <span class="detail-item__meta">{{ post.venue }}</span>
+  </summary>
+  <div class="detail-item__body">
+    {{ post.content }}
+    <div class="detail-item__links">
+      <a href="{{ base_path }}{{ post.url }}">Full entry</a>
+    </div>
+  </div>
+</details>
+{% endfor %}
+
+<h2 class="cv-heading">In preparation</h2>
+
+{% for post in in_prep %}
+<details class="detail-item" id="{{ post.title | slugify }}">
+  <summary>{{ post.title }}
+    <span class="detail-item__meta">{{ post.venue }}</span>
+  </summary>
+  <div class="detail-item__body">
+    {{ post.content }}
+    <div class="detail-item__links">
+      <a href="{{ base_path }}{{ post.url }}">Full entry</a>
+    </div>
+  </div>
+</details>
+{% endfor %}
