@@ -4,6 +4,8 @@ collection: publications
 category: conferences
 excerpt: 'A conceptual graph frequent pattern mining algorithm that extends DMGM-GSM with three further kinds of knowledge from the CG formalism: the fixed arity of relation nodes, signatures, and inference rules.'
 date: 2021-06-20
+location: "Zakopane, Poland"
+remote: true
 venue: 'ICAISC 2021 — International Conference on Artificial Intelligence and Soft Computing, Zakopane, Poland'
 paperurl: 'https://doi.org/10.1007/978-3-030-87897-9_14'
 citation: 'Faci, A., Lesot, M.-J. and Laudy, C. (2021). "cgSpan: Pattern Mining in Conceptual Graphs." <i>International Conference on Artificial Intelligence and Soft Computing (ICAISC)</i>, LNCS 12855, pp. 149&ndash;158.'

@@ -4,6 +4,7 @@ collection: publications
 category: conferences
 excerpt: 'An interpretable computational framework for structuring parliamentary debates through argumentative annotation, semantic clustering and relational graph modeling, applied to French National Assembly open data.'
 date: 2026-05-18
+location: "Paris, France"
 venue: 'Humanistica 2026, Paris — proceedings in the ACL Anthology'
 paperurl: 'https://doi.org/10.63744/eSaQ67MAMJSL'
 citation: 'Faci, A. (2026). "Structuration argumentative des débats parlementaires par IA. Vers une modélisation interprétable des dynamiques discursives." <i>Humanistica 2026</i>, 4, pp. 197&ndash;204.'

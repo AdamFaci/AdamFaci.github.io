@@ -11,7 +11,7 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  <body{% if page.section %} class="section-{{ page.section }}"{% endif %}>
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}

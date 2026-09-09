@@ -2,13 +2,23 @@
 layout: archive
 title: "Teaching"
 permalink: /teaching/
-author_profile: true
+author_profile: false
+section: teaching
 ---
 
 {% include base_path %}
 
-<p>Master's seminars, graduate courses and national training schools on artificial intelligence for the social sciences and humanities, alongside earlier teaching in computer science. Slides for the recent sessions are available on request &mdash; write to <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.</p>
+<p class="section-lead">Master's seminars, graduate courses and national training schools on artificial intelligence for the social sciences and humanities. Slides for the recent sessions are available on request &mdash; write to <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.</p>
 
+<div class="cv-section">
 {% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+  <div class="row-entry">
+    <div class="row-entry__date">{{ post.date | date: "%Y" }}</div>
+    <div class="row-entry__body">
+      <p class="row-entry__title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></p>
+      <p class="row-entry__org">{{ post.type }} &middot; {{ post.venue }}{% if post.location and post.location != "" %} &middot; {{ post.location }}{% endif %}</p>
+      {% if post.excerpt %}<p class="row-entry__note">{{ post.excerpt | strip_html | strip_newlines | truncate: 260 }}</p>{% endif %}
+    </div>
+  </div>
 {% endfor %}
+</div>

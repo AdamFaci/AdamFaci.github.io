@@ -1,0 +1,169 @@
+---
+layout: archive
+title: "Map"
+permalink: /map/
+author_profile: false
+---
+
+{% include base_path %}
+
+<p class="section-lead">Where the work has been presented. One marker per city; open a marker for the entries held there. Journal articles and work still under review have no venue city and are listed below the map.</p>
+
+<div id="map" class="map-frame"></div>
+
+<ul class="map-legend">
+  <li><span class="swatch swatch--talk"></span>Talks</li>
+  <li><span class="swatch swatch--pub"></span>Publications</li>
+  <li><span class="swatch" style="background:var(--c-teach)"></span>Both</li>
+  <li><span class="swatch swatch--remote"></span>Attended remotely</li>
+</ul>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+<script>
+  var ENTRIES = [
+  {%- for post in site.talks -%}
+    {%- assign loc = post.location | default: "" -%}
+    {%- if loc != "" -%}
+      {%- assign city = loc | split: " (" | first -%}
+      {%- assign coord = site.data.locations[city] -%}
+      {%- if coord %}
+    {kind:"talk", city:{{ city | jsonify }}, lat:{{ coord.lat }}, lon:{{ coord.lon }},
+     title:{{ post.title | jsonify }}, type:{{ post.type | default: "Talk" | jsonify }},
+     date:{{ post.date | date: "%b %Y" | jsonify }},
+     url:{{ post.url | prepend: base_path | jsonify }},
+     remote:{% if post.remote %}true{% else %}false{% endif %}},
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- for post in site.publications -%}
+    {%- assign loc = post.location | default: "" -%}
+    {%- if loc != "" and post.status == nil -%}
+      {%- assign city = loc | split: " (" | first -%}
+      {%- assign coord = site.data.locations[city] -%}
+      {%- if coord %}
+    {kind:"pub", city:{{ city | jsonify }}, lat:{{ coord.lat }}, lon:{{ coord.lon }},
+     title:{{ post.title | jsonify }}, type:"Publication",
+     date:{{ post.date | date: "%b %Y" | jsonify }},
+     url:{{ post.url | prepend: base_path | jsonify }},
+     remote:{% if post.remote %}true{% else %}false{% endif %}},
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor %}
+  ];
+
+  (function () {
+    var el = document.getElementById('map');
+    if (!el || typeof L === 'undefined' || !ENTRIES.length) return;
+
+    /* Group by city so overlapping pins never hide one another. */
+    var cities = {};
+    ENTRIES.forEach(function (e) {
+      var k = e.city;
+      if (!cities[k]) cities[k] = { city: e.city, lat: e.lat, lon: e.lon, items: [] };
+      cities[k].items.push(e);
+    });
+
+    function tokens() {
+      var cs = getComputedStyle(document.documentElement);
+      return {
+        talk:   cs.getPropertyValue('--c-talk').trim()  || '#DB7B5D',
+        pub:    cs.getPropertyValue('--c-pub').trim()   || '#4FB3A9',
+        both:   cs.getPropertyValue('--c-teach').trim() || '#D9A441',
+        muted:  cs.getPropertyValue('--text-muted').trim() || '#98A0A8'
+      };
+    }
+
+    var map = L.map(el, { scrollWheelZoom: false, worldCopyJump: true })
+               .setView([32, 20], 2);
+
+    var tiles = null;
+    function isLight() { return document.documentElement.getAttribute('data-theme') === 'light'; }
+    function setTiles() {
+      if (tiles) map.removeLayer(tiles);
+      tiles = L.tileLayer(
+        'https://{s}.basemaps.cartocdn.com/' + (isLight() ? 'light_all' : 'dark_all') +
+        '/{z}/{x}/{y}{r}.png',
+        { subdomains: 'abcd', maxZoom: 12,
+          attribution: '&copy; OpenStreetMap contributors &copy; CARTO' }
+      ).addTo(map);
+      tiles.getContainer().style.opacity = isLight() ? '1' : '0.85';
+    }
+
+    var markers = [];
+    function draw() {
+      var t = tokens();
+      markers.forEach(function (m) { map.removeLayer(m); });
+      markers = [];
+
+      Object.keys(cities).forEach(function (k) {
+        var c = cities[k];
+        var hasTalk = c.items.some(function (i) { return i.kind === 'talk'; });
+        var hasPub  = c.items.some(function (i) { return i.kind === 'pub'; });
+        var allRemote = c.items.every(function (i) { return i.remote; });
+        var colour = hasTalk && hasPub ? t.both : (hasTalk ? t.talk : t.pub);
+
+        var m = L.circleMarker([c.lat, c.lon], {
+          radius: 6 + Math.min(c.items.length - 1, 5) * 1.6,
+          color: allRemote ? t.muted : colour,
+          weight: allRemote ? 1.5 : 1,
+          dashArray: allRemote ? '3,3' : null,
+          fillColor: colour,
+          fillOpacity: allRemote ? 0 : 0.75
+        }).addTo(map);
+
+        var html = '<strong>' + c.city + '</strong>';
+        c.items.sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+        c.items.forEach(function (i) {
+          html += '<div style="margin-top:.55em">' +
+                  '<a href="' + i.url + '">' + i.title + '</a>' +
+                  '<span class="pop-meta">' + i.type + ' &middot; ' + i.date +
+                  (i.remote ? ' &middot; attended remotely' : '') + '</span></div>';
+        });
+        m.bindPopup(html, { maxWidth: 320 });
+        markers.push(m);
+      });
+    }
+
+    setTiles();
+    draw();
+    map.fitBounds(L.latLngBounds(markers.map(function (m) { return m.getLatLng(); })).pad(0.2));
+
+    /* Follow the site theme when the toggle is used. */
+    new MutationObserver(function () { setTiles(); draw(); })
+      .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  })();
+</script>
+
+<h2 class="cv-heading">Not on the map</h2>
+
+<p class="section-lead">Journal articles have no venue city, and work still under review or in preparation has no confirmed one. Nothing is hidden &mdash; it is listed here instead.</p>
+
+<ul class="compact-list map-orphans">
+{%- assign no_loc_pubs = site.publications | sort: "date" | reverse -%}
+{% for post in no_loc_pubs %}
+  {%- assign loc = post.location | default: "" -%}
+  {% if loc == "" %}
+  <li>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <span>
+      <a class="compact-list__title" href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+      <span class="compact-list__venue">{{ post.venue }}{% if post.status %} &middot; {{ post.status }}{% endif %}</span>
+    </span>
+  </li>
+  {% endif %}
+{% endfor %}
+{% for post in site.talks reversed %}
+  {%- assign loc = post.location | default: "" -%}
+  {% if loc == "" %}
+  <li>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <span>
+      <a class="compact-list__title" href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+      <span class="compact-list__venue">{{ post.type }} &middot; {{ post.venue }}</span>
+    </span>
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>

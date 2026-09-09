@@ -2,12 +2,13 @@
 layout: archive
 title: "Publications"
 permalink: /publications/
-author_profile: true
+author_profile: false
+section: publications
 ---
 
 {% include base_path %}
 
-<p class="section-lead">A complete and continuously updated record is available on <a href="{{ site.author.hal }}">HAL</a>, <a href="{{ site.author.orcid }}">ORCID</a> and <a href="{{ site.author.googlescholar }}">Google Scholar</a>. Expand any entry below for the abstract and links.</p>
+<p class="section-lead">A complete and continuously updated record is available on <a href="{{ site.author.hal }}">HAL</a>, <a href="{{ site.author.orcid }}">ORCID</a> and <a href="{{ site.author.googlescholar }}">Google Scholar</a>. Expand any entry below for the abstract and links. Conference venues are plotted on the <a href="{{ base_path }}/map/">map</a>.</p>
 
 {% assign published = site.publications | where_exp: "post", "post.status == nil" | sort: "date" | reverse %}
 {% assign under_review = site.publications | where: "status", "Under review" | sort: "date" | reverse %}
@@ -19,22 +20,28 @@ author_profile: true
 {% for post in published %}
   <li>
     <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
-    <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
-    <span class="compact-list__venue">&nbsp;&middot; {{ post.venue }}</span>
+    <span>
+      <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
+      <span class="compact-list__venue">{{ post.venue }}</span>
+    </span>
   </li>
 {% endfor %}
 {% for post in under_review %}
   <li>
     <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
-    <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
-    <span class="compact-list__venue">&nbsp;&middot; {{ post.venue }}</span>
+    <span>
+      <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
+      <span class="compact-list__venue">{{ post.venue }}</span>
+    </span>
   </li>
 {% endfor %}
 {% for post in in_prep %}
   <li>
     <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
-    <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
-    <span class="compact-list__venue">&nbsp;&middot; {{ post.venue }}</span>
+    <span>
+      <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
+      <span class="compact-list__venue">{{ post.venue }}</span>
+    </span>
   </li>
 {% endfor %}
 </ul>

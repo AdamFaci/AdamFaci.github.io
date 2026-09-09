@@ -4,6 +4,8 @@ collection: publications
 category: conferences
 excerpt: 'A comparative study of existing fuzzy extensions of conceptual graphs, organised by which part of the formalism each definition affects and which constraint it relaxes.'
 date: 2021-12-05
+location: "Orlando, USA"
+remote: true
 venue: 'IEEE SSCI-FOCI 2021 — Symposium Series on Computational Intelligence, Foundations of Computational Intelligence, Orlando, Florida, USA'
 paperurl: 'https://hal-lirmm.ccsd.cnrs.fr/lirmm-03401184v1'
 citation: 'Faci, A., Lesot, M.-J. and Laudy, C. (2021). "Fuzzy Conceptual Graphs: a comparative discussion." <i>IEEE Symposium Series on Computational Intelligence (SSCI), Foundations of Computational Intelligence</i>.'

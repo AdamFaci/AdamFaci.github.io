@@ -2,15 +2,23 @@
 layout: archive
 title: "Projects"
 permalink: /projects/
-author_profile: true
+author_profile: false
+section: projects
 redirect_from:
   - /portfolio/
 ---
 
 {% include base_path %}
 
-<p>Ongoing and recent research projects, tools and collective work. Publications arising from them are listed on the <a href="{{ base_path }}/publications/">publications page</a>.</p>
+<p class="section-lead">Ongoing and recent research projects, tools and collective work. Publications arising from them are on the <a href="{{ base_path }}/publications/">publications page</a>; released software is on the <a href="{{ base_path }}/code/">code page</a>.</p>
 
+<div class="cv-section">
 {% for post in site.portfolio %}
-  {% include archive-single.html %}
+  <div class="row-entry row-entry--flush">
+    <div class="row-entry__body">
+      <p class="row-entry__title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></p>
+      {% if post.excerpt %}<p class="row-entry__note">{{ post.excerpt | strip_html | strip_newlines }}</p>{% endif %}
+    </div>
+  </div>
 {% endfor %}
+</div>
