@@ -341,7 +341,7 @@ p > code, a > code, li > code, td > code, .btn { box-shadow: none !important; }
 
 .compact-list li {
   display: grid;
-  grid-template-columns: 4rem 1fr;
+  grid-template-columns: 5.5rem 1fr;
   gap: 0 1rem;
   margin: 0;
   padding: 0.55em 0;
@@ -358,6 +358,14 @@ p > code, a > code, li > code, td > code, .btn { box-shadow: none !important; }
   font-variant-numeric: tabular-nums;
   padding-top: 0.15em;
 }
+.compact-list__status {
+  display: block;
+  margin-top: 0.15em;
+  color: var(--accent);
+  font-size: 0.92em;
+  line-height: 1.2;
+}
+
 .compact-list__title { color: var(--text-strong); }
 .compact-list a.compact-list__title:hover { color: var(--accent); opacity: 1; }
 .compact-list__venue {

@@ -16,28 +16,14 @@ section: publications
 
 <h2 class="cv-heading">At a glance</h2>
 
+{% comment %} Work under review sits in the main chronological run. Work still
+   in preparation is left out of this list; it has its own section below. {% endcomment %}
+{% assign glance = published | concat: under_review | sort: "date" | reverse %}
+
 <ul class="compact-list">
-{% for post in published %}
+{% for post in glance %}
   <li>
-    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
-    <span>
-      <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
-      <span class="compact-list__venue">{{ post.venue }}</span>
-    </span>
-  </li>
-{% endfor %}
-{% for post in under_review %}
-  <li>
-    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
-    <span>
-      <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
-      <span class="compact-list__venue">{{ post.venue }}</span>
-    </span>
-  </li>
-{% endfor %}
-{% for post in in_prep %}
-  <li>
-    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}{% if post.status %}<span class="compact-list__status">({{ post.status }})</span>{% endif %}</span>
     <span>
       <a class="compact-list__title" href="#{{ post.title | slugify }}">{{ post.title }}</a>
       <span class="compact-list__venue">{{ post.venue }}</span>

@@ -94,11 +94,16 @@ redirect_from:
 
 <h2 class="cv-heading">Publications</h2>
 
+{% comment %} Same rule as the publications page: work under review sits in the
+   main chronological run, work in preparation is left out. {% endcomment %}
+{% assign cv_published = site.publications | where_exp: "post", "post.status == nil" %}
+{% assign cv_review = site.publications | where: "status", "Under review" %}
+{% assign cv_pubs = cv_published | concat: cv_review | sort: "date" | reverse %}
+
 <ul class="compact-list">
-{% assign cv_pubs = site.publications | where_exp: "post", "post.status == nil" | sort: "date" | reverse %}
 {% for post in cv_pubs %}
   <li>
-    <span class="compact-list__year">{{ post.date | date: "%Y" }}</span>
+    <span class="compact-list__year">{{ post.date | date: "%Y" }}{% if post.status %}<span class="compact-list__status">({{ post.status }})</span>{% endif %}</span>
     <span>
       <a class="compact-list__title" href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
       <span class="compact-list__venue">{{ post.venue }}</span>
@@ -107,7 +112,7 @@ redirect_from:
 {% endfor %}
 </ul>
 
-<p class="section-lead">Work under review and in preparation is listed on the <a href="{{ base_path }}/publications/">publications page</a>.</p>
+<p class="section-lead">Work in preparation is listed on the <a href="{{ base_path }}/publications/">publications page</a>.</p>
 
 <h2 class="cv-heading">Talks and presentations</h2>
 
