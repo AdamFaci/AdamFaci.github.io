@@ -21,7 +21,7 @@ repository               : "AdamFaci/AdamFaci.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpeg"
+  avatar           : "profile.jpg"
   name             : "Adam Faci"
   pronouns         : # example: "she/her"  
   bio              : "Postdoctoral researcher — large language models and knowledge graphs for the social sciences and humanities."
