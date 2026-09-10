@@ -6,7 +6,7 @@ authors:
 collection: talks
 type: "Conference talk"
 permalink: /talks/2025-06-01-dhllm-canons
-venue: "DH@LLM — Sorbonne Université, CRIHN & IEA"
+venue: "DH@LLM, Sorbonne Université, CRIHN & IEA"
 date: 2025-06-01
 location: "Paris, France"
 ---

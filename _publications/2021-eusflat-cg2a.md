@@ -10,7 +10,7 @@ excerpt: 'An algorithm for building synthetic conceptual graph databases that ex
 date: 2021-09-19
 location: "Bratislava, Slovakia"
 remote: true
-venue: 'IFSA–EUSFLAT–AGOP 2021 — Joint congress of the International Fuzzy Systems Association and the European Society for Fuzzy Logic and Technology, Bratislava, Slovakia'
+venue: 'IFSA–EUSFLAT–AGOP 2021: Joint congress of the International Fuzzy Systems Association and the European Society for Fuzzy Logic and Technology, Bratislava, Slovakia'
 paperurl: 'https://doi.org/10.2991/asum.k.210827.009'
 citation: 'Faci, A., Lesot, M.-J. and Laudy, C. (2021). "CG2A: Conceptual Graphs Generation Algorithm." <i>Joint Proceedings of IFSA, EUSFLAT and AGOP</i>, pp. 63&ndash;70.'
 ---

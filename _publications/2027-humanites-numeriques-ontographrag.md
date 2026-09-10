@@ -14,4 +14,4 @@ citation: 'Faci, A. and Provendier, E. (under review). "OntoGraphRag : lunettes 
 
 A conversational agent over a corpus answers from whatever its retriever happens to surface, which makes its readings hard to contest: there is no stated position to disagree with. OntoGraphRag inserts an ontology between the question and the corpus, so that the agent reads *through* an explicit conceptual grid.
 
-Changing the grid changes the reading — which is the point. The article argues that this makes the agent a partner in a dialectic over texts rather than an oracle, and discusses what such lenses cost in coverage.
+Changing the grid changes the reading, which is the point. The article argues that this makes the agent a partner in a dialectic over texts rather than an oracle, and discusses what such lenses cost in coverage.

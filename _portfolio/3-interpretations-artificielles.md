@@ -1,5 +1,5 @@
 ---
-title: "Seminar — Interprétations artificielles"
+title: "Seminar: Interprétations artificielles"
 excerpt: "A seminar on artificial and alternative interpretations, with Julien Schuh; participant in 2025, co-organiser in 2026. Edited volume in preparation."
 collection: portfolio
 permalink: /projects/interpretations-artificielles/

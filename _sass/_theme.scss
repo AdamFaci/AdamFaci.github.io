@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THEME LAYER — "lab sheet"
+   THEME LAYER: "lab sheet"
    Dark by default; light when <html data-theme="light">.
 
    Loaded last in main.scss so it overrides the compiled Minimal Mistakes
@@ -12,7 +12,7 @@
    ========================================================================== */
 
 :root {
-  /* neutrals — dark */
+  /* neutrals, dark */
   --bg:            #16181B;
   --bg-panel:      #1E2125;
   --bg-sunken:     #101215;
@@ -22,10 +22,10 @@
   --text-muted:    #98A0A8;   /*  6.7:1 on --bg  AA  */
   --rule:          #2C3238;   /* decorative hairline */
   --rule-strong:   #3D444C;
-  --border-ui:     #5F6871;   /*  3.14:1 on --bg — interactive controls */
+  --border-ui:     #5F6871;   /*  3.14:1 on --bg, interactive controls */
   --selection-bg:  #2F4A58;
 
-  /* section accents — dark. second value is the 12% tint of the same hue */
+  /* section accents, dark. second value is the 12% tint of the same hue */
   --c-pub:        #4FB3A9;  --c-pub-tint:   #1D2B2C;  /* 7.1:1 / 5.8:1 */
   --c-talk:       #DB7B5D;  --c-talk-tint:  #2E2423;  /* 5.9:1 / 5.0:1 */
   --c-teach:      #D9A441;  --c-teach-tint: #2D2920;  /* 7.9:1 / 6.4:1 */
@@ -55,10 +55,10 @@
   --text-muted:    #5E6772;   /*  5.6:1  AA  */
   --rule:          #E6E2DC;
   --rule-strong:   #CFC9C1;
-  --border-ui:     #8A9099;   /*  3.11:1 — interactive controls */
+  --border-ui:     #8A9099;   /*  3.11:1, interactive controls */
   --selection-bg:  #CFE7F1;
 
-  /* section accents — light. second value is the 7% tint */
+  /* section accents, light. second value is the 7% tint */
   --c-pub:        #0E6A6E;  --c-pub-tint:   #EBF1EF;  /* 6.1:1 / 5.6:1 */
   --c-talk:       #9C3D24;  --c-talk-tint:  #F5EEEA;  /* 6.5:1 / 5.9:1 */
   --c-teach:      #8A5A11;  --c-teach-tint: #F4F0E9;  /* 5.7:1 / 5.2:1 */
@@ -231,7 +231,7 @@ p > code, a > code, li > code, td > code, .btn { box-shadow: none !important; }
 .page__footer-copyright { font-family: var(--font-mono); font-size: 0.72em; }
 
 /*
-   Section headings — small caps over an accent rule
+   Section headings: small caps over an accent rule
    ========================================================================== */
 
 .cv-heading, .archive > h2 {
@@ -262,7 +262,7 @@ p > code, a > code, li > code, td > code, .btn { box-shadow: none !important; }
 }
 
 /*
-   Label | content rows — the core primitive, shared by CV, teaching,
+   Label | content rows: the core primitive, shared by CV, teaching,
    projects and anything else that is really a record rather than prose.
    ========================================================================== */
 
@@ -588,70 +588,6 @@ p > code, a > code, li > code, td > code, .btn { box-shadow: none !important; }
 .cv-download:hover { border-color: var(--accent); color: var(--accent) !important; opacity: 1; }
 
 /*
-   Map
-   ========================================================================== */
-
-.map-frame {
-  height: 32rem;
-  margin-bottom: 1.2em;
-  border: 1px solid var(--rule);
-  border-radius: 2px;
-  background: var(--bg-sunken);
-}
-@media screen and (max-width: 37.5em) { .map-frame { height: 22rem; } }
-
-.map-legend {
-  margin: 0 0 2em;
-  padding: 0;
-  list-style: none;
-  font-family: var(--font-mono);
-  font-size: 0.76em;
-  color: var(--text-muted);
-}
-.map-legend li { display: inline-block; margin: 0 1.4em 0.4em 0; }
-.map-legend .swatch {
-  display: inline-block;
-  width: 0.72em; height: 0.72em;
-  margin-right: 0.45em;
-  border-radius: 50%;
-  vertical-align: baseline;
-}
-.map-legend .swatch--talk   { background: var(--c-talk); }
-.map-legend .swatch--pub    { background: var(--c-pub); }
-.map-legend .swatch--remote { background: transparent; border: 1px dashed var(--text-muted); }
-
-/* Leaflet popups follow the theme rather than Leaflet's white default. */
-.leaflet-popup-content-wrapper, .leaflet-popup-tip {
-  background: var(--bg-panel);
-  color: var(--text);
-  border: 1px solid var(--rule-strong);
-  border-radius: 2px;
-  box-shadow: none;
-}
-.leaflet-popup-content { margin: 0.8em 1em; font-size: 0.85em; line-height: 1.5; }
-.leaflet-popup-content strong { color: var(--text-strong); }
-.leaflet-popup-content .pop-meta {
-  display: block;
-  margin-top: 0.3em;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.88em;
-}
-.leaflet-container a.leaflet-popup-close-button { color: var(--text-muted); }
-.leaflet-bar a, .leaflet-bar a:hover {
-  background: var(--bg-panel);
-  color: var(--text);
-  border-color: var(--rule-strong);
-}
-.leaflet-control-attribution {
-  background: var(--bg-panel) !important;
-  color: var(--text-muted) !important;
-}
-.leaflet-control-attribution a { color: var(--text-muted) !important; }
-
-.map-orphans { font-size: 0.88em; color: var(--text-muted); }
-
-/*
    Code
    ========================================================================== */
 
@@ -735,7 +671,7 @@ th, td, pre, code, .page__meta, .page__date, .archive__subtitle, figcaption {
 }
 
 /*
-   Theme toggle — top right, clear of the greedy-nav hamburger
+   Theme toggle: top right, clear of the greedy-nav hamburger
    ========================================================================== */
 
 .theme-toggle {
@@ -770,7 +706,7 @@ th, td, pre, code, .page__meta, .page__date, .archive__subtitle, figcaption {
 :root[data-theme="light"] .theme-toggle__sun  { display: none; }
 :root[data-theme="light"] .theme-toggle__moon { display: inline; }
 
-@media print { .theme-toggle, .map-frame, .map-legend { display: none; } }
+@media print { .theme-toggle { display: none; } }
 
 .row-entry--flush { grid-template-columns: 1fr; }
 .row-entry--flush .row-entry__body { min-width: 0; }

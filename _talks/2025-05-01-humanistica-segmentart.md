@@ -6,7 +6,7 @@ authors:
 collection: talks
 type: "Conference talk"
 permalink: /talks/2025-05-01-humanistica-segmentart
-venue: "Humanistica 2025 — Association francophone des humanités numériques"
+venue: "Humanistica 2025, Association francophone des humanités numériques"
 date: 2025-05-27
 location: "Dakar, Senegal"
 ---

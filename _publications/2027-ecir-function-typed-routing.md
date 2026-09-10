@@ -5,9 +5,9 @@ authors:
 collection: publications
 category: manuscripts
 status: "In preparation"
-excerpt: 'Routing a scholarly question to an explicit, typed plan — retrieve, compare, count, cite — instead of answering it with a single undifferentiated generation.'
+excerpt: 'Routing a scholarly question to an explicit, typed plan (retrieve, compare, count, cite) instead of answering it with a single undifferentiated generation.'
 date: 2027-03-01
-venue: 'ECIR — European Conference on Information Retrieval (in preparation)'
+venue: 'ECIR: European Conference on Information Retrieval (in preparation)'
 citation: 'Faci, A. (in preparation). "Function-Typed Routing to Neuro-Symbolic Plans for Scholarly RAG." <i>European Conference on Information Retrieval (ECIR)</i>.'
 ---
 

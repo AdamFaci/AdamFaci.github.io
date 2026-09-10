@@ -7,4 +7,4 @@ permalink: /projects/socio-history-ai-digital-humanities/
 
 Modes of knowledge representation and disciplinary reconfiguration: a socio-history of how artificial intelligence spread through French digital humanities between 2000 and 2025.
 
-The study is contrastive. Linguistics adopted computational methods early and with relatively little friction; art history did so considerably later. The hypothesis under test is that the difference is not one of technical readiness but of the representation regimes each discipline already had — what each field was prepared to treat as data, and what it insisted on keeping as interpretation.
+The study is contrastive. Linguistics adopted computational methods early and with relatively little friction; art history did so considerably later. The hypothesis under test is that the difference is not one of technical readiness but of the representation regimes each discipline already had: what each field was prepared to treat as data, and what it insisted on keeping as interpretation.

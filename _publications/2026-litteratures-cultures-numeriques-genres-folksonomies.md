@@ -13,4 +13,4 @@ citation: 'Langlet, I. and Faci, A. (2026). "Théorie des genres comparatiste et
 
 Genre, in comparative literary theory, is a construction of critics. On reading platforms it is also a construction of readers, produced by uncoordinated tagging at a scale no critical tradition can match.
 
-Written with Irène Langlet, this chapter confronts the two, and asks what a folksonomy actually measures: not a theory of genre, but the aggregate of situated reading practices — which is a different object, and one that automatic labelling then further transforms.
+Written with Irène Langlet, this chapter confronts the two, and asks what a folksonomy actually measures: not a theory of genre, but the aggregate of situated reading practices, which is a different object, and one that automatic labelling then further transforms.

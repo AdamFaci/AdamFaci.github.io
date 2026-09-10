@@ -8,7 +8,7 @@ section: publications
 
 {% include base_path %}
 
-<p class="section-lead">A complete and continuously updated record is available on <a href="{{ site.author.hal }}">HAL</a>, <a href="{{ site.author.orcid }}">ORCID</a> and <a href="{{ site.author.googlescholar }}">Google Scholar</a>. Expand any entry below for the abstract and links. Conference venues are plotted on the <a href="{{ base_path }}/map/">map</a>.</p>
+<p class="section-lead">A complete and continuously updated record is available on <a href="{{ site.author.hal }}">HAL</a>, <a href="{{ site.author.orcid }}">ORCID</a> and <a href="{{ site.author.googlescholar }}">Google Scholar</a>. Expand any entry below for the abstract and links.</p>
 
 {% assign published = site.publications | where_exp: "post", "post.status == nil" | sort: "date" | reverse %}
 {% assign under_review = site.publications | where: "status", "Under review" | sort: "date" | reverse %}

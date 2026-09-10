@@ -15,8 +15,8 @@ The framing is the participant's own position: neither a prescriber of tools nor
 Content
 ======
 
-* **Disentangling the terms.** AI, machine learning and generative AI as three nested circles; generative AI as a recent subset rather than as "AI" in general; and the reminder that many of the methods that are useful in SSH — classification, clustering, named entity recognition — are not generative at all.
-* **How a LLM generates.** Tokens and next-token prediction; probabilistic rather than deductive behaviour, with no consulted fact base; and the direct consequences — the same prompt yields different answers, every added token changes the result, and confident phrasing is not correctness.
+* **Disentangling the terms.** AI, machine learning and generative AI as three nested circles; generative AI as a recent subset rather than as "AI" in general; and the reminder that many of the methods that are useful in SSH (classification, clustering, named entity recognition) are not generative at all.
+* **How a LLM generates.** Tokens and next-token prediction; probabilistic rather than deductive behaviour, with no consulted fact base; and the direct consequences: the same prompt yields different answers, every added token changes the result, and confident phrasing is not correctness.
 * **Embeddings.** Representing words, sentences and images as vectors whose proximity approximates proximity of meaning; why this is useful in SSH for semantic search, document clustering and corpus comparison; and why an embedding also encodes the biases of its training corpus, so that "semantic proximity" reflects textual regularity rather than a neutral truth.
 * **Case study and discussion.** Clustering a corpus of annotated images, followed by open discussion on supporting SSH research projects.
 

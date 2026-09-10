@@ -11,4 +11,4 @@ date: 2026-09-03
 location: ""
 ---
 
-With Alice Breton. Poster on how the stated identity of an author — gender, institutional affiliation — shifts the reviews that language models generate for an otherwise identical manuscript, and on which parts of the review are most sensitive.
+With Alice Breton. Poster on how the stated identity of an author (gender, institutional affiliation) shifts the reviews that language models generate for an otherwise identical manuscript, and on which parts of the review are most sensitive.

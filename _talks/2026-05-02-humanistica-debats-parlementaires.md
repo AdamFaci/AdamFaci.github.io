@@ -5,7 +5,7 @@ authors:
 collection: talks
 type: "Conference talk"
 permalink: /talks/2026-05-02-humanistica-debats-parlementaires
-venue: "Humanistica 2026 — Association francophone des humanités numériques"
+venue: "Humanistica 2026, Association francophone des humanités numériques"
 date: 2026-05-18
 location: "Paris, France"
 ---

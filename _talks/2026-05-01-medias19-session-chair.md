@@ -5,7 +5,7 @@ authors:
 collection: talks
 type: "Session chair"
 permalink: /talks/2026-05-01-medias19-session-chair
-venue: "Troisième congrès Médias 19 — « Le journal dans tous ses états »"
+venue: "Troisième congrès Médias 19: « Le journal dans tous ses états »"
 date: 2026-05-01
 location: "Montpellier, France"
 ---

@@ -6,7 +6,7 @@ authors:
 collection: talks
 type: "Conference talk"
 permalink: /talks/2024-10-14-coldoc-rag-glam
-venue: "ColDoc 2024 — « La linguistique dans une ère nouvelle : discours, méthodes et technologies dans le paysage contemporain »"
+venue: "ColDoc 2024: « La linguistique dans une ère nouvelle : discours, méthodes et technologies dans le paysage contemporain »"
 date: 2024-10-14
 location: "Nanterre, France"
 ---

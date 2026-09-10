@@ -8,7 +8,7 @@ authors:
 collection: talks
 type: "Poster"
 permalink: /talks/2024-05-03-dhnb-huma-num-infrastructure
-venue: "DHNB — « From experimentation to experience: lessons learned from the intersections between digital humanities and cultural heritage »"
+venue: "DHNB: « From experimentation to experience: lessons learned from the intersections between digital humanities and cultural heritage »"
 date: 2024-05-27
 location: "Reykjavík, Iceland"
 ---
