@@ -6,9 +6,11 @@ authors:
 collection: talks
 type: "Poster"
 permalink: /talks/2026-09-03-mashs-identity-bias-peer-review
-venue: "Conférence Modèles et apprentissages en sciences humaines et sociales"
-date: 2026-09-03
-location: ""
+venue: "MASHS 2026: Modèles et apprentissages en sciences humaines et sociales"
+date: 2026-09-09
+location: "Paris, France"
 ---
 
 With Alice Breton. Poster on how the stated identity of an author (gender, institutional affiliation) shifts the reviews that language models generate for an otherwise identical manuscript, and on which parts of the review are most sensitive.
+
+[Abstract on the conference website](https://mashs2026.sciencesconf.org/758491)
